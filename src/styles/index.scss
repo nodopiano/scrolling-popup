@@ -1,5 +1,92 @@
 $body-color: blue;
+$black: #222;
+$white: #fefefe;
+$yellow: #ffec81;
 
 body {
   color: $body-color;
+}
+
+.demo-page {
+  height: 2300px;
+}
+
+.promo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+
+  .floater.f-closed {
+    width: auto;
+  }
+
+  &__column {
+    width: 100%;
+  }
+}
+
+.floating-box__close {
+  display: none;
+}
+
+.floating-box {
+  .floating-box__close {
+    display: inline-block;
+    background: inherit;
+    color: $black;
+    background: $yellow;
+    line-height: 20px;
+
+    &:hover {
+      color: rgba($white, 0.75);
+    }
+  }
+}
+
+.floating-box {
+  background: $white;
+  border-top-left-radius: 3px;
+  border-top-left-radius: 3px;
+  bottom: 0;
+  width: auto;
+  padding: 1.5rem;
+  position: fixed;
+  right: 3rem;
+  top: initial;
+  // transition: all 0.1s;
+  height: auto;
+  z-index: 3000;
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.1);
+
+  &__close {
+    border: 1px solid;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: center;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    font-size: 0.9rem;
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+
+    &:hover {
+      color: rgba($white, 0.75);
+    }
+  }
+
+  &.f-closed {
+    // bottom: -100%;
+    transition: all 0.1s;
+    width: auto;
+  }
+
+  &.f-closed-by-the-user {
+    display: none;
+    bottom: initial;
+    top: 100%;
+    transition: all 0.5s;
+  }
 }
